@@ -32,7 +32,8 @@ jobs:
         flutter-version: '2.0.5'
     - name: Build
       working-directory: ./exo1_inventory
-      run: flutter pub get
-      run: flutter test
-      run: flutter build apk
-      run: flutter build appbundle
+      run: 
+        flutter pub get
+        flutter test
+        flutter build apk
+        flutter build appbundle
