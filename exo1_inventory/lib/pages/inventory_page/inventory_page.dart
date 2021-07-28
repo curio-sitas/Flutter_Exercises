@@ -1,6 +1,11 @@
+import 'package:exo1_inventory/providers/inventory_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class InventoryPage extends StatelessWidget {
+  final int index;
+  final InventoryProvider inv;
+  InventoryPage(this.index, this.inv);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +19,7 @@ class InventoryPage extends StatelessWidget {
             onPressed: () => {Navigator.of(context).pushNamed('config_page')},
           )
         ],
-        title: Text('Inventory Name # number of stocks'),
+        title: Text('$index # ' + inv.inv.getName()),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),

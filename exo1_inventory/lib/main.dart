@@ -1,11 +1,14 @@
 import 'package:exo1_inventory/pages/inventory_page/inventory_page.dart';
+import 'package:exo1_inventory/providers/inventorylist_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/config_page/config_page.dart';
 import 'pages/home_page/home_page.dart';
 
 void main() {
-  runApp(App());
+  runApp(ChangeNotifierProvider(
+      create: (context) => InventoryListProvider(), child: App()));
 }
 
 class App extends StatelessWidget {
@@ -21,7 +24,6 @@ class App extends StatelessWidget {
       ),
       home: HomePage(),
       routes: <String, WidgetBuilder>{
-        'inv_page': (BuildContext context) => InventoryPage(),
         'config_page': (BuildContext context) => ConfigPage(),
       },
     );
