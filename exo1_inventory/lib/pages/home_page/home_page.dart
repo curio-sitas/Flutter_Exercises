@@ -1,77 +1,69 @@
-import 'package:exo1_inventory/pages/home_page/widgets/inventoy_card.dart';
-import 'package:exo1_inventory/providers/inventorylist_provider.dart';
+import 'package:exo1_inventory/utils/Contants.dart';
 import 'package:flutter/material.dart';
 
-import 'package:provider/provider.dart';
-
 class HomePage extends StatelessWidget {
-  late TextEditingController _textFieldController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Consumer<InventoryListProvider>(
-      builder: (context, invList, child) {
-        return Scaffold(
-          appBar: AppBar(
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.settings,
-                  color: Colors.white,
-                ),
-                onPressed: () =>
-                    {Navigator.of(context).pushNamed('config_page')},
-              )
+    return Scaffold(
+      appBar: AppBar(
+        title: HomeMenu(),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+              child: ListView(
+            children: [
+              TestWidget(),
+              TestWidget(),
+              TestWidget(),
+              TestWidget(),
+              TestWidget(),
+              TestWidget()
             ],
-          ),
-          body: invList.inventories.isEmpty
-              ? Center(
-                  child: Icon(
-                    Icons.inventory_rounded,
-                    size: 64,
-                  ),
-                )
-              : ListView.builder(
-                  padding: const EdgeInsets.only(left: 9, right: 9, bottom: 9),
-                  shrinkWrap: true,
-                  itemCount: invList.inventories.length,
-                  itemBuilder: (context, _index) {
-                    return ChangeNotifierProvider.value(
-                      value: invList.inventories[_index],
-                      child: InventoryCard(index: _index),
-                    );
-                  }),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () => showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: Text('TextField in Dialog'),
-                    content: TextField(
-                      onChanged: (value) {},
-                      controller: _textFieldController,
-                      decoration:
-                          InputDecoration(hintText: "Text Field in Dialog"),
-                    ),
-                    actions: <Widget>[
-                      TextButton(
-                          child: Text('CANCEL'),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          }),
-                      TextButton(
-                          child: Text('OK'),
-                          onPressed: () {
-                            invList.newInventory(_textFieldController.text);
-                            Navigator.pop(context);
-                          })
-                    ],
-                  );
-                }),
-            tooltip: 'Add inventory',
-            child: Icon(Icons.add),
-          ),
-        );
-      },
+          ))
+        ],
+      ),
+    );
+  }
+}
+
+class HomeMenu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          Icons.inventory_2,
+          color: secondaryColor,
+        ),
+        Container(
+            margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
+            child: Text("Inventories")),
+        Spacer(),
+        Icon(Icons.add)
+      ],
+    );
+  }
+}
+
+class TestWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+      child: Container(
+          color: cardColors,
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child: Row(
+            textBaseline: TextBaseline.ideographic,
+            children: [
+              Icon(Icons.electrical_services),
+              Spacer(),
+              Text("Example"),
+              Spacer(),
+              Icon(Icons.close)
+            ],
+          )),
     );
   }
 }

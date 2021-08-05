@@ -1,4 +1,4 @@
-# exo1_inventory [![Build APK](https://github.com/ParadiseLab/Flutter_Exercises/actions/workflows/build_exo1.yml/badge.svg)](https://github.com/ParadiseLab/Flutter_Exercises/actions/workflows/build_exo1.yml)
+# exo1_inventory
 
 A new Flutter project.
 

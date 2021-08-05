@@ -1,18 +1,27 @@
-import 'package:flutter/material.dart';
-import 'stock.dart';
+import 'Item.dart';
 
 class Inventory {
-  String _name = "";
-  Color _color = Colors.red;
-  List<Stock> _stocks = [];
-  Inventory(String name, Color color) {
-    _name = name;
-    _color = color;
+  String name = "";
+  late List<Item> items;
+
+  Inventory(this.name) {}
+
+  void addItem(Item item) {
+    this.items.add(item);
   }
 
-  String getName() => _name;
-  Color getColor() => _color;
+  void removeItem(int index) {
+    if (this.items.length < 1) {
+      return;
+    }
+    this.items.removeAt(index);
+  }
 
-  void removeStockById(int id) => _stocks.removeAt(id);
-  void addStock(Stock s) => _stocks.add(s);
+  Item getItem(int index) {
+    return this.items[index];
+  }
+
+  List<Item> getItems() {
+    return this.items;
+  }
 }
