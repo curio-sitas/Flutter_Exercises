@@ -1,29 +1,33 @@
+import 'package:exo1_inventory/providers/InventoryFactoryProvider.dart';
 import 'package:exo1_inventory/utils/Contants.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: HomeMenu(),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-              child: ListView(
+    return ChangeNotifierProvider<InventoryFactoryProvider>(
+        create: (context) => InventoryFactoryProvider(),
+        child: Scaffold(
+          appBar: AppBar(
+            title: HomeMenu(),
+          ),
+          body: Column(
             children: [
-              TestWidget(),
-              TestWidget(),
-              TestWidget(),
-              TestWidget(),
-              TestWidget(),
-              TestWidget()
+              Expanded(
+                  child: ListView(
+                children: [
+                  TestWidget(),
+                  TestWidget(),
+                  TestWidget(),
+                  TestWidget(),
+                  TestWidget(),
+                  TestWidget()
+                ],
+              ))
             ],
-          ))
-        ],
-      ),
-    );
+          ),
+        ));
   }
 }
 
