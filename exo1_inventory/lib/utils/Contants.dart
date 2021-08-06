@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 const String kAppName = "Beautiful Inventory";
-Color kSecondaryColor = Colors.grey[300] as Color;
-Color kCardColors = kSecondaryColor;
+const Color kSecondaryColor = Color(0xFFF2F2FF);
+const Color kMainColor = Colors.blue;

@@ -11,6 +11,7 @@ class InventoryProvider extends ChangeNotifier {
 
   void addItem(String name, int count) {
     items.add(ItemProvider(name, count));
+    notifyListeners();
   }
 
   void removeItem(int index) {
@@ -18,10 +19,14 @@ class InventoryProvider extends ChangeNotifier {
       return;
     }
     items.removeAt(index);
+    notifyListeners();
   }
 
   String get name => inv.name;
   set name(String name) {
     inv.name = name;
+    notifyListeners();
   }
+
+  int get itemCount => items.length;
 }

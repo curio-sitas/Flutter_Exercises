@@ -19,14 +19,7 @@ class App extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: Scaffold(
-              appBar: AppBar(
-                  title: Row(children: const [
-                Text(kAppName),
-                Spacer(),
-                Icon(Icons.polymer)
-              ])),
-              body: HomePage()),
+          home: HomePage(),
         ));
   }
 }
