@@ -55,7 +55,6 @@ class ItemCard extends StatelessWidget {
                     onPressed: () => {item.addTen()},
                     icon: const Icon(Icons.skip_next)),
                 const Spacer(),
-                IconButton(onPressed: () => {}, icon: const Icon(Icons.edit)),
               ])
             ])),
       );

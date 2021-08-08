@@ -1,3 +1,4 @@
+import 'package:exo1_inventory/pages/home_page/widgets/add_inventory_dialog.dart';
 import 'package:exo1_inventory/pages/home_page/widgets/inventory_card_widget.dart';
 import 'package:exo1_inventory/providers/inventory_store_provider.dart';
 import 'package:exo1_inventory/shared/widgets/main_appbar_widget.dart';
@@ -20,7 +21,14 @@ class HomePage extends StatelessWidget {
                   title: "Inventories",
                   actions: [
                     IconButton(
-                        onPressed: () => {inventories.createInventory("Test")},
+                        onPressed: () => {
+                              /*inventories.createInventory("Test")*/
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AddInventoryDialog();
+                                  })
+                            },
                         icon: const Icon(Icons.add))
                   ]),
               Expanded(

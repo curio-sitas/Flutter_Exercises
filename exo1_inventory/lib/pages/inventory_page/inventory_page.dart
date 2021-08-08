@@ -1,11 +1,11 @@
+import 'package:exo1_inventory/pages/inventory_page/widgets/add_item_dialog.dart';
 import 'package:exo1_inventory/providers/inventory_provider.dart';
 import 'package:exo1_inventory/shared/widgets/main_appbar_widget.dart';
 import 'package:exo1_inventory/shared/widgets/secondary_appbar_widget.dart';
-import 'package:exo1_inventory/utils/contants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'item_card_widget.dart';
+import 'widgets/item_card_widget.dart';
 
 class InventoryPage extends StatelessWidget {
   const InventoryPage({required this.index});
@@ -22,7 +22,15 @@ class InventoryPage extends StatelessWidget {
                   title: "Items",
                   actions: [
                     IconButton(
-                        onPressed: () => {inventory.addItem("Test Item", 3)},
+                        onPressed: () => {
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return ChangeNotifierProvider.value(
+                                        value: inventory,
+                                        child: AddItemDialog());
+                                  })
+                            },
                         icon: const Icon(Icons.add))
                   ]),
               Expanded(
