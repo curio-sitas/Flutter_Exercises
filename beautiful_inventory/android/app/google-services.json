@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "915211459691",
+    "project_id": "simple-inv-5597f",
+    "storage_bucket": "simple-inv-5597f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915211459691:android:52e73bb449c55240afa52e",
+        "android_client_info": {
+          "package_name": "com.paradiselab.beautiful_inventory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915211459691-10i7l9hvq85hactgkob5jkq3eu8gnjff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7OzNwl6xnHSPn2XycvT3RHmRJE-FXHvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915211459691-10i7l9hvq85hactgkob5jkq3eu8gnjff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
