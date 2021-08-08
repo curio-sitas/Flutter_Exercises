@@ -1,5 +1,6 @@
 import 'package:exo1_inventory/providers/inventory_provider.dart';
 import 'package:exo1_inventory/shared/widgets/main_appbar_widget.dart';
+import 'package:exo1_inventory/shared/widgets/secondary_appbar_widget.dart';
 import 'package:exo1_inventory/utils/contants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,19 +17,9 @@ class InventoryPage extends StatelessWidget {
           appBar: MainAppBar(),
           body: Column(
             children: [
-              AppBar(
-                  title: Row(
-                    children: [
-                      const Icon(
-                        Icons.inventory_2,
-                        color: kSecondaryColor,
-                      ),
-                      Container(
-                          margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
-                          child: const Text("Items")),
-                      const Spacer()
-                    ],
-                  ),
+              SecondaryAppBar(
+                  icon: Icons.wallet_travel,
+                  title: "Items",
                   actions: [
                     IconButton(
                         onPressed: () => {inventory.addItem("Test Item", 3)},

@@ -1,4 +1,5 @@
 import 'package:exo1_inventory/providers/inventory_store_provider.dart';
+import 'package:exo1_inventory/utils/contants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'pages/home_page/home_page.dart';
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
           title: kAppName,
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primarySwatch: Colors.blue,
+            primaryColor: kMainColor,
           ),
           home: HomePage(),
         ));

@@ -38,6 +38,7 @@ class InventoryCard extends StatelessWidget {
                         },
                     icon: const Icon(Icons.folder_open)),
                 Text(inventory.itemCount.toString()),
+                IconButton(onPressed: () => {}, icon: const Icon(Icons.edit)),
                 const Spacer(),
                 Text(
                   inventory.name,
